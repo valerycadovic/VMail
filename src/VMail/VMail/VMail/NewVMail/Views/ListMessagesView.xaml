@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VMail.NewVMail.Views.ListMessagesView"
+             Title="Уваходныя паведамленні">
+    <MasterDetailPage.Master>
+        <ContentPage>
+            <ContentPage.Content>
+                <Button Text="Send Message"/>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <ContentPage>
+            <ContentPage.Content>
+                <StackLayout>
+                    <ListView ItemsSource="{Binding Messages}"
+                      SelectedItem="{Binding SelectedMessage}"
+                      HasUnevenRows="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <StackLayout>
+                                            <Label Text="{Binding Subject}" FontSize="Large"/>
+                                            <Label Text="{Binding From}"/>
+                                            <Label Text="{Binding Date}"/>
+                                        </StackLayout>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>
