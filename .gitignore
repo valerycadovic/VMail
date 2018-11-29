@@ -1,0 +1,7 @@
+bin/
+obj/
+VMail.Android.Assets/
+VMail.Android.Resources/
+*.csproj.bak
+*.cd
+*.txt
